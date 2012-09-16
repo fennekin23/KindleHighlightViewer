@@ -31,29 +31,36 @@
             </Setter>
         </Style>
     </Window.Resources>
-
     <Grid Name="mainGrid">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Template="{DynamicResource ScrollViewerControlTemplate}" 
-                      Height="{Binding ElementName=mainGrid, Path=ActualHeight}"
-                      CanContentScroll="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" 
+                      Template="{DynamicResource ScrollViewerControlTemplate}" 
+                      Grid.Row="0">
             <ListBox ItemsSource="{Binding ClippingsList}" 
                      BorderBrush="Transparent"  
                      HorizontalContentAlignment="Stretch"
-                     ItemContainerStyle="{StaticResource ListBoxItemStyle}">
+                     ItemContainerStyle="{StaticResource ListBoxItemStyle}"
+                     SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
+                <ListBox.CommandBindings>
+                    <CommandBinding Command="Copy" Executed="CommandBinding_Executed"/>
+                </ListBox.CommandBindings>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="Gainsboro" BorderThickness="2" CornerRadius="3" Background="Transparent" MaxWidth="600">
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="2">
                                 <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
                                     <Border DockPanel.Dock="Left" Background="LightGray" BorderBrush="#FF3079ED" CornerRadius="8" BorderThickness="1">
-                                        <TextBlock Text="{Binding Title}" Margin="5,3"/>
+                                        <TextBlock Text="{Binding Title}" FontFamily="Verdana" Margin="5,2"/>
                                     </Border>
-                                    <Border DockPanel.Dock="Right" Margin="0,2,0,0" Background="WhiteSmoke" BorderBrush="LightGray" CornerRadius="8" BorderThickness="1">
-                                        <TextBlock Text="{Binding Author}" Margin="5,3" />
+                                    <Border DockPanel.Dock="Right" Margin="0,2,0,0" Background="LightGray" BorderBrush="#FF3079ED" CornerRadius="8" BorderThickness="1">
+                                        <TextBlock Text="{Binding Author}" FontFamily="Verdana" Margin="5,2" />
                                     </Border>
                                 </DockPanel>
                                 <Border HorizontalAlignment="Stretch" Margin="0,2,0,0" Background="WhiteSmoke" BorderBrush="LightGray" CornerRadius="8" BorderThickness="1">
-                                    <TextBlock Text="{Binding HighlightedText}" TextWrapping="WrapWithOverflow" Margin="5,3" />
+                                    <TextBlock Text="{Binding HighlightedText}" TextWrapping="WrapWithOverflow" FontFamily="Verdana" FontSize="12" Margin="5,2" />
                                 </Border>
                             </StackPanel>
                         </Border>
@@ -61,5 +68,12 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </ScrollViewer>
+        <StatusBar Grid.Row="1">
+            <TextBlock Text="Created by Bogdan Sachkovsky © ver. 1.0" FontSize="14" FontFamily="Verdana" Margin="5">
+                <TextBlock.Effect>
+    <DropShadowEffect />
+  </TextBlock.Effect>
+            </TextBlock>
+        </StatusBar>
     </Grid>
 </Window>

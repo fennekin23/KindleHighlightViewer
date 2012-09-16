@@ -16,9 +16,11 @@ namespace KindlHighlightViewer
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            DataLoader loader = new DataLoader();
+            IDataConverter TxtToXml = new TxtToXmlConverter();
+            TxtToXml.Convert();
 
-            MainViewModel mainViewModel = new MainViewModel(loader.LoadFromTxt());
+            IDataLoader XmlLoader = new XmlDataLoader();
+            MainViewModel mainViewModel = new MainViewModel(XmlLoader);
             
             MainWindow window = new MainWindow();
             window.DataContext = mainViewModel;

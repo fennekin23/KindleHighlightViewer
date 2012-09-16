@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KindlHighlightViewer.ViewModels;
 
 namespace KindlHighlightViewer
 {
@@ -22,6 +23,11 @@ namespace KindlHighlightViewer
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            (this.DataContext as MainViewModel).CopyCommand(sender, e);
         }
     }
 }

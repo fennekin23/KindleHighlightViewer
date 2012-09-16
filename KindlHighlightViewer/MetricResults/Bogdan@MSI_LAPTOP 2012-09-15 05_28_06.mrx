@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeMetricsReport Version="10">
+   <Targets>
+      <Target Name="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\bin\Debug\KindlHighlightViewer.exe">
+         <Modules>
+            <Module Name="KindlHighlightViewer.exe" AssemblyVersion="1.0.0.0" FileVersion="1.0.0.0">
+               <Metrics>
+                  <Metric Name="MaintainabilityIndex" Value="79" />
+                  <Metric Name="CyclomaticComplexity" Value="65" />
+                  <Metric Name="ClassCoupling" Value="55" />
+                  <Metric Name="DepthOfInheritance" Value="9" />
+                  <Metric Name="LinesOfCode" Value="115" />
+               </Metrics>
+               <Namespaces>
+                  <Namespace Name="KindlHighlightViewer">
+                     <Metrics>
+                        <Metric Name="MaintainabilityIndex" Value="78" />
+                        <Metric Name="CyclomaticComplexity" Value="12" />
+                        <Metric Name="ClassCoupling" Value="18" />
+                        <Metric Name="DepthOfInheritance" Value="9" />
+                        <Metric Name="LinesOfCode" Value="25" />
+                     </Metrics>
+                     <Types>
+                        <Type Name="MainWindow">
+                           <Metrics>
+                              <Metric Name="MaintainabilityIndex" Value="78" />
+                              <Metric Name="CyclomaticComplexity" Value="7" />
+                              <Metric Name="ClassCoupling" Value="13" />
+                              <Metric Name="DepthOfInheritance" Value="9" />
+                              <Metric Name="LinesOfCode" Value="12" />
+                           </Metrics>
+                           <Members>
+                              <Member Name="MainWindow()" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\MainWindow.xaml.cs" Line="23">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="91" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="1" />
+                                    <Metric Name="LinesOfCode" Value="2" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="CommandBinding_Executed(object, ExecutedRoutedEventArgs) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\MainWindow.xaml.cs" Line="29">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="91" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="3" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="InitializeComponent() : void" File="e:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\MainWindow.xaml" Line="1">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="75" />
+                                    <Metric Name="CyclomaticComplexity" Value="2" />
+                                    <Metric Name="ClassCoupling" Value="3" />
+                                    <Metric Name="LinesOfCode" Value="4" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="IComponentConnector.Connect(int, object) : void" File="e:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\MainWindow.xaml" Line="48">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="73" />
+                                    <Metric Name="CyclomaticComplexity" Value="3" />
+                                    <Metric Name="ClassCoupling" Value="5" />
+                                    <Metric Name="LinesOfCode" Value="5" />
+                                 </Metrics>
+                              </Member>
+                           </Members>
+                        </Type>
+                        <Type Name="App">
+                           <Metrics>
+                              <Metric Name="MaintainabilityIndex" Value="77" />
+                              <Metric Name="CyclomaticComplexity" Value="5" />
+                              <Metric Name="ClassCoupling" Value="12" />
+                              <Metric Name="DepthOfInheritance" Value="3" />
+                              <Metric Name="LinesOfCode" Value="13" />
+                           </Metrics>
+                           <Members>
+                              <Member Name="Application_Startup(object, StartupEventArgs) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\App.xaml.cs" Line="18">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="71" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="6" />
+                                    <Metric Name="LinesOfCode" Value="5" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="InitializeComponent() : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\obj\x86\Debug\App.g.cs" Line="50">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="72" />
+                                    <Metric Name="CyclomaticComplexity" Value="2" />
+                                    <Metric Name="ClassCoupling" Value="4" />
+                                    <Metric Name="LinesOfCode" Value="5" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="Main() : void">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="83" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="3" />
+                                    <Metric Name="LinesOfCode" Value="2" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="App()">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="100" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="1" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                           </Members>
+                        </Type>
+                     </Types>
+                  </Namespace>
+                  <Namespace Name="KindlHighlightViewer.Code">
+                     <Metrics>
+                        <Metric Name="MaintainabilityIndex" Value="76" />
+                        <Metric Name="CyclomaticComplexity" Value="30" />
+                        <Metric Name="ClassCoupling" Value="23" />
+                        <Metric Name="DepthOfInheritance" Value="1" />
+                        <Metric Name="LinesOfCode" Value="53" />
+                     </Metrics>
+                     <Types>
+                        <Type Name="ClippingItem">
+                           <Metrics>
+                              <Metric Name="MaintainabilityIndex" Value="94" />
+                              <Metric Name="CyclomaticComplexity" Value="7" />
+                              <Metric Name="ClassCoupling" Value="0" />
+                              <Metric Name="DepthOfInheritance" Value="1" />
+                              <Metric Name="LinesOfCode" Value="7" />
+                           </Metrics>
+                           <Members>
+                              <Member Name="Title.get() : string">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="98" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="Title.set(string) : void">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="95" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="Author.get() : string">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="98" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="Author.set(string) : void">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="95" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="HighlightedText.get() : string">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="98" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="HighlightedText.set(string) : void">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="95" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="ClippingItem()">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="100" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                           </Members>
+                        </Type>
+                        <Type Name="ScrollViewerCorrector">
+                           <Metrics>
+                              <Metric Name="MaintainabilityIndex" Value="71" />
+                              <Metric Name="CyclomaticComplexity" Value="18" />
+                              <Metric Name="ClassCoupling" Value="17" />
+                              <Metric Name="DepthOfInheritance" Value="1" />
+                              <Metric Name="LinesOfCode" Value="27" />
+                           </Metrics>
+                           <Members>
+                              <Member Name="GetFixScrolling(DependencyObject) : bool" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\Code\FixScrolling.cs" Line="14">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="86" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="2" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="SetFixScrolling(DependencyObject, bool) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\Code\FixScrolling.cs" Line="19">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="94" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="OnFixScrollingPropertyChanged(object, DependencyPropertyChangedEventArgs) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\Code\FixScrolling.cs" Line="27">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="66" />
+                                    <Metric Name="CyclomaticComplexity" Value="4" />
+                                    <Metric Name="ClassCoupling" Value="5" />
+                                    <Metric Name="LinesOfCode" Value="7" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="HandlePreviewMouseWheel(object, MouseWheelEventArgs) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\Code\FixScrolling.cs" Line="39">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="54" />
+                                    <Metric Name="CyclomaticComplexity" Value="10" />
+                                    <Metric Name="ClassCoupling" Value="9" />
+                                    <Metric Name="LinesOfCode" Value="14" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="ScrollViewerCorrector()">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="100" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="ScrollViewerCorrector()" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\Code\FixScrolling.cs" Line="23">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="80" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="6" />
+                                    <Metric Name="LinesOfCode" Value="2" />
+                                 </Metrics>
+                              </Member>
+                           </Members>
+                        </Type>
+                        <Type Name="DataLoader">
+                           <Metrics>
+                              <Metric Name="MaintainabilityIndex" Value="63" />
+                              <Metric Name="CyclomaticComplexity" Value="5" />
+                              <Metric Name="ClassCoupling" Value="7" />
+                              <Metric Name="DepthOfInheritance" Value="1" />
+                              <Metric Name="LinesOfCode" Value="19" />
+                           </Metrics>
+                           <Members>
+                              <Member Name="LoadFromTxt(string) : List&lt;ClippingItem&gt;" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\Code\DataLoader.cs" Line="21">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="54" />
+                                    <Metric Name="CyclomaticComplexity" Value="4" />
+                                    <Metric Name="ClassCoupling" Value="7" />
+                                    <Metric Name="LinesOfCode" Value="18" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="DataLoader()">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="100" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="0" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                           </Members>
+                        </Type>
+                     </Types>
+                  </Namespace>
+                  <Namespace Name="KindlHighlightViewer.ViewModels">
+                     <Metrics>
+                        <Metric Name="MaintainabilityIndex" Value="81" />
+                        <Metric Name="CyclomaticComplexity" Value="17" />
+                        <Metric Name="ClassCoupling" Value="13" />
+                        <Metric Name="DepthOfInheritance" Value="1" />
+                        <Metric Name="LinesOfCode" Value="28" />
+                     </Metrics>
+                     <Types>
+                        <Type Name="MainViewModel">
+                           <Metrics>
+                              <Metric Name="MaintainabilityIndex" Value="81" />
+                              <Metric Name="CyclomaticComplexity" Value="17" />
+                              <Metric Name="ClassCoupling" Value="13" />
+                              <Metric Name="DepthOfInheritance" Value="1" />
+                              <Metric Name="LinesOfCode" Value="28" />
+                           </Metrics>
+                           <Members>
+                              <Member Name="MainViewModel()" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\ViewModels\MainViewModel.cs" Line="28">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="79" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="3" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="MainViewModel(List&lt;ClippingItem&gt;)" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\ViewModels\MainViewModel.cs" Line="28">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="70" />
+                                    <Metric Name="CyclomaticComplexity" Value="2" />
+                                    <Metric Name="ClassCoupling" Value="6" />
+                                    <Metric Name="LinesOfCode" Value="5" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="ClippingsList.get() : ObservableCollection&lt;ClippingItem&gt;" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\ViewModels\MainViewModel.cs" Line="34">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="98" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="ClippingsList.set(ObservableCollection&lt;ClippingItem&gt;) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\ViewModels\MainViewModel.cs" Line="35">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="95" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="SelectedItem.get() : ClippingItem" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\ViewModels\MainViewModel.cs" Line="44">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="98" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="1" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="SelectedItem.set(ClippingItem) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\ViewModels\MainViewModel.cs" Line="45">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="92" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="1" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="PropertyChanged.add(PropertyChangedEventHandler) : void">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="74" />
+                                    <Metric Name="CyclomaticComplexity" Value="2" />
+                                    <Metric Name="ClassCoupling" Value="3" />
+                                    <Metric Name="LinesOfCode" Value="5" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="PropertyChanged.remove(PropertyChangedEventHandler) : void">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="74" />
+                                    <Metric Name="CyclomaticComplexity" Value="2" />
+                                    <Metric Name="ClassCoupling" Value="3" />
+                                    <Metric Name="LinesOfCode" Value="5" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="OnPropertyChanged(string) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\ViewModels\MainViewModel.cs" Line="51">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="79" />
+                                    <Metric Name="CyclomaticComplexity" Value="2" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="3" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="CopyCommand(object, ExecutedRoutedEventArgs) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\ViewModels\MainViewModel.cs" Line="62">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="74" />
+                                    <Metric Name="CyclomaticComplexity" Value="4" />
+                                    <Metric Name="ClassCoupling" Value="3" />
+                                    <Metric Name="LinesOfCode" Value="3" />
+                                 </Metrics>
+                              </Member>
+                           </Members>
+                        </Type>
+                     </Types>
+                  </Namespace>
+                  <Namespace Name="XamlGeneratedNamespace">
+                     <Metrics>
+                        <Metric Name="MaintainabilityIndex" Value="89" />
+                        <Metric Name="CyclomaticComplexity" Value="6" />
+                        <Metric Name="ClassCoupling" Value="9" />
+                        <Metric Name="DepthOfInheritance" Value="2" />
+                        <Metric Name="LinesOfCode" Value="9" />
+                     </Metrics>
+                     <Types>
+                        <Type Name="GeneratedInternalTypeHelper">
+                           <Metrics>
+                              <Metric Name="MaintainabilityIndex" Value="89" />
+                              <Metric Name="CyclomaticComplexity" Value="6" />
+                              <Metric Name="ClassCoupling" Value="9" />
+                              <Metric Name="DepthOfInheritance" Value="2" />
+                              <Metric Name="LinesOfCode" Value="9" />
+                           </Metrics>
+                           <Members>
+                              <Member Name="CreateInstance(Type, CultureInfo) : object" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" Line="24">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="84" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="3" />
+                                    <Metric Name="LinesOfCode" Value="2" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="GetPropertyValue(PropertyInfo, object, CultureInfo) : object" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" Line="32">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="83" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="2" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="SetPropertyValue(PropertyInfo, object, object, CultureInfo) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" Line="39">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="90" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="CreateDelegate(Type, object, string) : Delegate" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" Line="46">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="81" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="2" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="AddEventHandler(EventInfo, object, Delegate) : void" File="E:\Programming\.NET\KindlHighlightViewer\KindlHighlightViewer\KindlHighlightViewer\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs" Line="56">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="94" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="2" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                              <Member Name="GeneratedInternalTypeHelper()">
+                                 <Metrics>
+                                    <Metric Name="MaintainabilityIndex" Value="100" />
+                                    <Metric Name="CyclomaticComplexity" Value="1" />
+                                    <Metric Name="ClassCoupling" Value="1" />
+                                    <Metric Name="LinesOfCode" Value="1" />
+                                 </Metrics>
+                              </Member>
+                           </Members>
+                        </Type>
+                     </Types>
+                  </Namespace>
+               </Namespaces>
+            </Module>
+         </Modules>
+      </Target>
+   </Targets>
+</CodeMetricsReport>
