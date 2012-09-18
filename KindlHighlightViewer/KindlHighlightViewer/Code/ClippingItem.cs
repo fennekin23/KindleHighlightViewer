@@ -1,8 +1,11 @@
-﻿namespace KindlHighlightViewer.Code
+﻿using System;
+
+namespace KindlHighlightViewer.Code
 {
     /// <summary>
     /// Data structure for presentation clipping item.
     /// </summary>
+    [Serializable]
     public class ClippingItem
     {
         /// <summary>

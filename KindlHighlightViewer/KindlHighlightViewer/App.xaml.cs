@@ -6,6 +6,8 @@ using System.Linq;
 using System.Windows;
 using KindlHighlightViewer.Code;
 using KindlHighlightViewer.ViewModels;
+using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace KindlHighlightViewer
 {
@@ -17,14 +19,19 @@ namespace KindlHighlightViewer
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             IDataConverter TxtToXml = new TxtToXmlConverter();
-            TxtToXml.Convert();
+            IDataConverter TxtToBin = new TxtToBinaryConverter();
+
+            //TxtToXml.Convert();
+            TxtToBin.Convert();
 
             IDataLoader XmlLoader = new XmlDataLoader();
-            MainViewModel mainViewModel = new MainViewModel(XmlLoader);
-            
+            IDataLoader BinLoader = new BinaryDataLoader();
+
+            MainViewModel mainViewModel = new MainViewModel(BinLoader);
             MainWindow window = new MainWindow();
             window.DataContext = mainViewModel;
             window.Show();
+            mainViewModel.LoadClippings();
         }
     }
 }
