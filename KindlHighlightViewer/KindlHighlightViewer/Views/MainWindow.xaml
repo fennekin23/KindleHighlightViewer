@@ -40,7 +40,7 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" 
                       Template="{DynamicResource ScrollViewerControlTemplate}" 
                       Grid.Row="0">
-            <ListBox ItemsSource="{Binding ClippingsList}" 
+            <ListBox ItemsSource="{Binding ClippingsList}"
                      BorderBrush="Transparent"  
                      HorizontalContentAlignment="Stretch"
                      ItemContainerStyle="{StaticResource ListBoxItemStyle}"

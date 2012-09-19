@@ -9,8 +9,8 @@ using System.Windows.Input;
 using System.Windows;
 using System.Xml.Serialization;
 using System.IO;
-using System.Threading.Tasks;
-using System.Threading;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace KindlHighlightViewer.ViewModels
 {
@@ -22,10 +22,9 @@ namespace KindlHighlightViewer.ViewModels
         }
 
         IDataLoader dataLoader;
-
-        public MainViewModel(IDataLoader dataLoaderPar)
+        public MainViewModel(IDataLoader loader)
         {
-            dataLoader = dataLoaderPar;
+            dataLoader = loader;
         }
 
         ObservableCollection<ClippingItem> clippingsList = new ObservableCollection<ClippingItem>();
@@ -59,7 +58,7 @@ namespace KindlHighlightViewer.ViewModels
         }
 
         /// <summary>
-        /// Load clippings to view. Using IDataLoader instance.
+        /// Loading clippings to ClippingsList.
         /// </summary>
         public void LoadClippings()
         {
@@ -88,7 +87,7 @@ namespace KindlHighlightViewer.ViewModels
         {
             if (!String.IsNullOrEmpty(SelectedItem.Title) && !String.IsNullOrEmpty(SelectedItem.Author) && !String.IsNullOrEmpty(SelectedItem.HighlightedText))
             {
-                string copyMessage = String.Format("{0} {1} \n\"{2}\"", SelectedItem.Title, SelectedItem.Author, SelectedItem.HighlightedText);
+                string copyMessage = String.Format("{0} ({1}) \"{2}\"", SelectedItem.Title, SelectedItem.Author, SelectedItem.HighlightedText);
                 Clipboard.SetText(copyMessage);
             }
         }

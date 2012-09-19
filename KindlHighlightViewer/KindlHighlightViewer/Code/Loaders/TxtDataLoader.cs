@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Xml.Serialization;
 
 namespace KindlHighlightViewer.Code
 {
     /// <summary>
     /// Logic for loading data from txt file.
     /// </summary>
-    [Obsolete]
     public class TxtDataLoader : IDataLoader
     {
         /// <summary>
@@ -26,25 +22,34 @@ namespace KindlHighlightViewer.Code
                 path = "My Clippings.txt";
             }
 
-            List<ClippingItem> clippingsList = new List<ClippingItem>();
-            string pattern = @"(?<title>.+ )\((?<author>.+)\)";
-            using (StreamReader reader = new StreamReader(path))
+            try
             {
-                while (!reader.EndOfStream)
+                List<ClippingItem> clippingsList = new List<ClippingItem>();
+                string pattern = @"(?<title>.+ )\((?<author>.+)\)";
+                using (StreamReader reader = new StreamReader(path))
                 {
-                    ClippingItem item = new ClippingItem();
-                    string tempTandA = reader.ReadLine(); // title (author) string
-                    item.Title = Regex.Match(tempTandA, pattern).Groups["title"].ToString();
-                    item.Author = Regex.Match(tempTandA, pattern).Groups["author"].ToString();
-                    string tempHorB = reader.ReadLine(); // highlight or bookmark
-                    reader.ReadLine();
-                    item.HighlightedText = reader.ReadLine();
-                    reader.ReadLine();
-                    if (tempHorB.Contains("Highlight"))
-                        clippingsList.Add(item);
+                    while (!reader.EndOfStream)
+                    {
+                        ClippingItem item = new ClippingItem();
+                        string tempTandA = reader.ReadLine(); // title (author) string
+                        item.Title = Regex.Match(tempTandA, pattern).Groups["title"].ToString();
+                        item.Author = Regex.Match(tempTandA, pattern).Groups["author"].ToString();
+                        string tempHorB = reader.ReadLine(); // highlight or bookmark
+                        reader.ReadLine();
+                        item.HighlightedText = reader.ReadLine();
+                        reader.ReadLine();
+                        if (tempHorB.Contains("Highlight"))
+                            clippingsList.Add(item);
+                    }
                 }
+                return clippingsList;
             }
-            return clippingsList;
+            catch (Exception ex)
+            {
+                ShowBox.ShowError("Error while loading txt file. \n" + ex.Message);
+            }
+
+            return new List<ClippingItem>();
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace KindlHighlightViewer.Code
@@ -25,8 +22,9 @@ namespace KindlHighlightViewer.Code
                 path = "My Clippings.txt";
             }
 
-            List<ClippingItem> clippingsList = new List<ClippingItem>();
-            string pattern = @"(?<title>.+ )\((?<author>.+)\)";
+            IDataLoader xmlLoader = new XmlDataLoader();
+            IEnumerable<ClippingItem> clippingsList = xmlLoader.Load(path);
+
             using (StreamReader reader = new StreamReader(path))
             {
                 MD5Utility HashUtility = new MD5Utility();
@@ -34,21 +32,6 @@ namespace KindlHighlightViewer.Code
 
                 if (isNewFile)
                 {
-                    reader.BaseStream.Seek(0, SeekOrigin.Begin);
-                    while (!reader.EndOfStream)
-                    {
-                        ClippingItem item = new ClippingItem();
-                        string tempTandA = reader.ReadLine(); // title (author) string
-                        item.Title = Regex.Match(tempTandA, pattern).Groups["title"].ToString();
-                        item.Author = Regex.Match(tempTandA, pattern).Groups["author"].ToString();
-                        string tempHorB = reader.ReadLine(); // highlight or bookmark
-                        reader.ReadLine();
-                        item.HighlightedText = reader.ReadLine();
-                        reader.ReadLine();
-                        if (tempHorB.Contains("Highlight"))
-                            clippingsList.Add(item);
-                    }
-                    reader.Close();
                     Save(path, clippingsList);
                 }
             }
@@ -62,11 +45,18 @@ namespace KindlHighlightViewer.Code
         /// <param name="path">Path to save.</param>
         private void Save(string path, IEnumerable<ClippingItem> clippingsList)
         {
-            path += ".xml";
-            XmlSerializer serializer = new XmlSerializer(clippingsList.GetType());
-            TextWriter writer = new StreamWriter(path);
-            serializer.Serialize(writer, clippingsList);
-            writer.Close();
+            try
+            {
+                path += ".xml";
+                XmlSerializer serializer = new XmlSerializer(clippingsList.GetType());
+                TextWriter writer = new StreamWriter(path);
+                serializer.Serialize(writer, clippingsList);
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                ShowBox.ShowError("Error while saving xml file. \n" + ex.Message);
+            }
         }
     }
 }

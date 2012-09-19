@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 
 namespace KindlHighlightViewer.Code
@@ -23,16 +22,25 @@ namespace KindlHighlightViewer.Code
                 path = "My Clippings.txt.xml";
             }
 
-            XDocument openDocument = XDocument.Load(path);
-            IEnumerable<ClippingItem> clippingsList = (from item in openDocument.Descendants("ClippingItem")
-                                                       select
-                                                           new ClippingItem
-                                                           {
-                                                               Title = item.Element("Title").Value,
-                                                               Author = item.Element("Author").Value,
-                                                               HighlightedText = item.Element("HighlightedText").Value
-                                                           }).ToArray();
-            return clippingsList;
+            try
+            {
+                XDocument openDocument = XDocument.Load(path);
+                IEnumerable<ClippingItem> clippingsList = (from item in openDocument.Descendants("ClippingItem")
+                                                           select
+                                                               new ClippingItem
+                                                               {
+                                                                   Title = item.Element("Title").Value,
+                                                                   Author = item.Element("Author").Value,
+                                                                   HighlightedText = item.Element("HighlightedText").Value
+                                                               }).ToArray();
+                return clippingsList;
+            }
+            catch (Exception ex)
+            {
+                ShowBox.ShowError("Error while loading xml file. \n" + ex.Message);
+            }
+
+            return new List<ClippingItem>();
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -24,12 +22,20 @@ namespace KindlHighlightViewer.Code
                 path = "My Clippings.txt.bin";
             }
 
-            FileStream readStream = new FileStream(path, FileMode.Open);
-            BinaryFormatter formatter = new BinaryFormatter();
-            IEnumerable<ClippingItem> clippingsList = (IEnumerable<ClippingItem>)formatter.Deserialize(readStream);
-            readStream.Close();
+            try
+            {
+                FileStream readStream = new FileStream(path, FileMode.Open);
+                BinaryFormatter formatter = new BinaryFormatter();
+                IEnumerable<ClippingItem> clippingsList = (IEnumerable<ClippingItem>)formatter.Deserialize(readStream);
+                readStream.Close();
+                return clippingsList;
+            }
+            catch (Exception ex)
+            {
+                ShowBox.ShowError("Error while loading bin file. \n" + ex.Message);
+            }
 
-            return clippingsList;
+            return new List<ClippingItem>();
         }
     }
 }
