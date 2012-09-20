@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KindlHighlightViewer", "KindlHighlightViewer\KindlHighlightViewer.csproj", "{71656872-E592-480C-9634-6FBCD67DBC36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KindleHighlightViewer", "KindleHighlightViewer\KindleHighlightViewer.csproj", "{71656872-E592-480C-9634-6FBCD67DBC36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

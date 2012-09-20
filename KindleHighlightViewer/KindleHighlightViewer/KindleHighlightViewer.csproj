@@ -8,8 +8,8 @@
     <ProjectGuid>{71656872-E592-480C-9634-6FBCD67DBC36}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KindlHighlightViewer</RootNamespace>
-    <AssemblyName>KindlHighlightViewer</AssemblyName>
+    <RootNamespace>KindleHighlightViewer</RootNamespace>
+    <AssemblyName>KindleHighlightViewer</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
