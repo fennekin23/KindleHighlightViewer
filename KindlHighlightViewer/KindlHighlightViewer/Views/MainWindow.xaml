@@ -81,7 +81,7 @@
             <!--<ProgressBar Height="20" Width="400" HorizontalAlignment="Center" IsIndeterminate="True" Margin="10"/>-->
         </StackPanel>
         <StatusBar Grid.Row="1">
-            <TextBlock Text="Created by Bogdan Sachkovsky © ver. 1.0" FontSize="14" FontFamily="Verdana" Margin="5">
+            <TextBlock Text="Created by Bogdan Sachkovsky © ver. 1.1" FontSize="14" FontFamily="Verdana" Margin="5">
                 <TextBlock.Effect>
                     <DropShadowEffect />
                 </TextBlock.Effect>
