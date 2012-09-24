@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KindlHighlightViewer")]
+[assembly: AssemblyTitle("KindelHighlightViewer")]
 [assembly: AssemblyDescription("Amazon kindle highlight viewer.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KindlHighlightViewer")]
+[assembly: AssemblyProduct("KindleHighlightViewer")]
 [assembly: AssemblyCopyright("Bogdan Sachkovsky ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

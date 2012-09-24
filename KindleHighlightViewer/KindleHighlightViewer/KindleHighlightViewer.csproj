@@ -82,6 +82,7 @@
     <Compile Include="Code\Converters\TxtToXmlConverter.cs" />
     <Compile Include="Code\Loaders\XmlDataLoader.cs" />
     <Compile Include="Code\ShowBox.cs" />
+    <Compile Include="ModifyRegistry.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

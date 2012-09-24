@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
 using System.IO;
+using Utility.ModifyRegistry;
 
 namespace KindlHighlightViewer.Code
 {
@@ -17,11 +18,19 @@ namespace KindlHighlightViewer.Code
             using (MD5 md5Hash = MD5.Create())
             {
                 string newHash = GetMd5Hash(md5Hash, inputStream);
-                string oldHash = File.ReadAllText("Hash.txt");
+                ModifyRegistry registry = new ModifyRegistry();
+                registry.ShowError = false;
+
+                string oldHash = registry.Read("Hash");
+                if (String.IsNullOrEmpty(oldHash))
+                {
+                    registry.Write("Hash", "0");
+                }
+
                 bool result = !IsSame(newHash, oldHash);
                 if (result) // if new file need to parse
                 {
-                    File.WriteAllText("Hash.txt", newHash);
+                    registry.Write("Hash", newHash);
                 }
                 return result;
             }
