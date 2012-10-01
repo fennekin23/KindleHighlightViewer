@@ -73,6 +73,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Code\BooleanConverter.cs" />
+    <Compile Include="Code\DataVirtualization\AsyncVirtualizingCollection.cs" />
+    <Compile Include="Code\DataVirtualization\ClippingItemProvider.cs" />
+    <Compile Include="Code\DataVirtualization\IItemsProvider.cs" />
+    <Compile Include="Code\DataVirtualization\VirtualizingCollection.cs" />
     <Compile Include="Code\Loaders\BinaryDataLoader.cs" />
     <Compile Include="Code\FixScrolling.cs" />
     <Compile Include="Code\Converters\IDataConverter.cs" />
