@@ -30,7 +30,6 @@ namespace KindlHighlightViewer
             MainWindow window = new MainWindow();
             window.DataContext = mainViewModel;
             window.Show();
-            mainViewModel.LoadClippings();
         }
     }
 }

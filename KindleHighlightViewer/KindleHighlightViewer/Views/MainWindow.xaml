@@ -13,6 +13,7 @@
                 <Setter Property="lib:ScrollViewerCorrector.FixScrolling" Value="True" />
             </Style.Setters>
         </Style>
+        <!---->
         <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
             <Setter Property="Template">
@@ -31,7 +32,41 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <!---->
+        <Style x:Key="lvStyle" TargetType="{x:Type ListView}">
+            <Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="True"/>
+            <Setter Property="VirtualizingStackPanel.VirtualizationMode" Value="Recycling"/>
+            <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="True"/>
+            <Setter Property="ListView.ItemsSource" Value="{Binding ClippingsList}"/>
+            <Setter Property="ListView.View">
+                <Setter.Value>
+                    <GridView>
+                        <GridViewColumn Header="Id" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Author}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Name" Width="150">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Title}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ClippingsList.IsLoading}" Value="True">
+                    <Setter Property="ListView.Cursor" Value="Wait"/>
+                    <Setter Property="ListView.Background" Value="LightGray"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
+    
     <Grid Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -40,7 +75,10 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" 
                       Template="{DynamicResource ScrollViewerControlTemplate}" 
                       Grid.Row="0">
-            <ListBox ItemsSource="{Binding ClippingsList, IsAsync=True}"
+
+            <ListView Margin="5" Style="{DynamicResource lvStyle}"/>
+            
+            <!--<ListBox ItemsSource="{Binding ClippingsList, IsAsync=True}"
                      BorderBrush="Transparent"  
                      HorizontalContentAlignment="Stretch"
                      ItemContainerStyle="{StaticResource ListBoxItemStyle}"
@@ -67,7 +105,7 @@
                         </Border>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListBox>
+            </ListBox>-->
         </ScrollViewer>
         <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel.Visibility>

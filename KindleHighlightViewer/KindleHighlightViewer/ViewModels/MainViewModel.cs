@@ -11,6 +11,7 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Windows.Controls;
 using System.Windows.Data;
+using KindleHighlightViewer.Code.DataVirtualization;
 
 namespace KindlHighlightViewer.ViewModels
 {
@@ -21,17 +22,21 @@ namespace KindlHighlightViewer.ViewModels
 
         }
 
-        IDataLoader dataLoader;
+        //IDataLoader dataLoader;
+
+        ClippingItemProvider clippingItemProvider;
         public MainViewModel(IDataLoader loader)
         {
-            dataLoader = loader;
+            var tempCollection = loader.Load();
+            clippingItemProvider = new ClippingItemProvider(30, tempCollection);
+            clippingsList  = new AsyncVirtualizingCollection<ClippingItem>(clippingItemProvider, 30, 1000000);
         }
 
-        ObservableCollection<ClippingItem> clippingsList = new ObservableCollection<ClippingItem>();
+        AsyncVirtualizingCollection<ClippingItem> clippingsList;
         /// <summary>
         /// View list of clippings.
         /// </summary>
-        public ObservableCollection<ClippingItem> ClippingsList
+        public AsyncVirtualizingCollection<ClippingItem> ClippingsList
         {
             get { return clippingsList; }
             set { clippingsList = value; }
@@ -57,18 +62,13 @@ namespace KindlHighlightViewer.ViewModels
             set { loadingVisible = value; OnPropertyChanged("LoadingVisible"); }
         }
 
-        /// <summary>
-        /// Loading clippings to ClippingsList.
-        /// </summary>
-        public void LoadClippings()
-        {
-            var tempCollection = dataLoader.Load();
-            foreach (ClippingItem item in tempCollection)
-            {
-                ClippingsList.Add(item);
-            }
-            LoadingVisible = false;
-        }
+        ///// <summary>
+        ///// Loading clippings to ClippingsList.
+        ///// </summary>
+        //public void LoadClippings()
+        //{
+        //    LoadingVisible = false;
+        //}
 
         /* INotifyPropertyChanged members*/
         public event PropertyChangedEventHandler PropertyChanged;

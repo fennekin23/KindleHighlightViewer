@@ -10,18 +10,21 @@ namespace KindleHighlightViewer.Code.DataVirtualization
 {
     class ClippingItemProvider : IItemsProvider<ClippingItem>
     {
-        private readonly int _count;
-        private readonly int _fetchDelay;
+        private readonly int count;
+        private readonly int fetchDelay;
+        private IEnumerable<ClippingItem> sourceList;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ClippingItemProvider"/> class.
         /// </summary>
         /// <param name="count"></param>
         /// <param name="fetchDelay"></param>
-        public ClippingItemProvider(int count, int fetchDelay)
+        /// <param name="_sourceList"></param>
+        public ClippingItemProvider(int _fetchDelay, IEnumerable<ClippingItem> _sourceList)
         {
-            _count = count;
-            _fetchDelay = fetchDelay;
+            count = _sourceList.Count();
+            fetchDelay = _fetchDelay;
+            sourceList = _sourceList;
         }
 
         /// <summary>
@@ -31,8 +34,8 @@ namespace KindleHighlightViewer.Code.DataVirtualization
         public int FetchCount()
         {
             Trace.WriteLine("FetchCount");
-            Thread.Sleep(_fetchDelay);
-            return _count; 
+            Thread.Sleep(fetchDelay);
+            return count; 
         }
 
         /// <summary>
@@ -44,9 +47,24 @@ namespace KindleHighlightViewer.Code.DataVirtualization
         public IList<ClippingItem> FetchRange(int startIndex, int count)
         {
             Trace.WriteLine("FetchRange: " + startIndex + "," + count);
-            Thread.Sleep(_fetchDelay);
+            Thread.Sleep(fetchDelay);
+
+            int end = 0;
+            if ((startIndex + count) > sourceList.Count())
+            {
+                end = sourceList.Count();
+            }
+            else
+            {
+                end = startIndex + count;
+            }
 
             List<ClippingItem> list = new List<ClippingItem>();
+            for (int i = startIndex; i < end; i++)
+            {
+                list.Add(sourceList.ElementAt(i));
+            }
+
             return list;
         }
     }
