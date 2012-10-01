@@ -10,17 +10,16 @@ namespace KindleHighlightViewer.Code.DataVirtualization
 {
     class ClippingItemProvider : IItemsProvider<ClippingItem>
     {
+        private IEnumerable<ClippingItem> sourceList;
         private readonly int count;
         private readonly int fetchDelay;
-        private IEnumerable<ClippingItem> sourceList;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ClippingItemProvider"/> class.
         /// </summary>
-        /// <param name="count"></param>
-        /// <param name="fetchDelay"></param>
+        /// <param name="_fetchDelay"></param>
         /// <param name="_sourceList"></param>
-        public ClippingItemProvider(int _fetchDelay, IEnumerable<ClippingItem> _sourceList)
+        public ClippingItemProvider(IEnumerable<ClippingItem> _sourceList, int _fetchDelay)
         {
             count = _sourceList.Count();
             fetchDelay = _fetchDelay;
@@ -49,14 +48,10 @@ namespace KindleHighlightViewer.Code.DataVirtualization
             Trace.WriteLine("FetchRange: " + startIndex + "," + count);
             Thread.Sleep(fetchDelay);
 
-            int end = 0;
-            if ((startIndex + count) > sourceList.Count())
+            int end = startIndex + count;
+            if (end > sourceList.Count())
             {
-                end = sourceList.Count();
-            }
-            else
-            {
-                end = startIndex + count;
+                end = count;
             }
 
             List<ClippingItem> list = new List<ClippingItem>();
