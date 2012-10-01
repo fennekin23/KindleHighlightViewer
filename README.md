@@ -1,4 +1,4 @@
 KindlHighlightViewer
 ====================
 
-Amazon kindle highlight viewer. Read snd share your highlights.
+Amazon kindle highlight viewer. Read and share your highlights.
