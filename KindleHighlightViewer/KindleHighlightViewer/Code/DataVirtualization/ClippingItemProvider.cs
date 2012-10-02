@@ -48,10 +48,14 @@ namespace KindleHighlightViewer.Code.DataVirtualization
             Trace.WriteLine("FetchRange: " + startIndex + "," + count);
             Thread.Sleep(fetchDelay);
 
-            int end = startIndex + count;
+            int end = 0;
             if (end > sourceList.Count())
             {
                 end = count;
+            }
+            else
+            {
+                end = sourceList.Count();
             }
 
             List<ClippingItem> list = new List<ClippingItem>();

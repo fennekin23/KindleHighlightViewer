@@ -29,7 +29,7 @@ namespace KindlHighlightViewer.ViewModels
         {
             var tempCollection = loader.Load();
             clippingItemProvider = new ClippingItemProvider(tempCollection, 500);
-            clippingsList = new AsyncVirtualizingCollection<ClippingItem>(clippingItemProvider, 150, 500000);
+            clippingsList = new AsyncVirtualizingCollection<ClippingItem>(clippingItemProvider, 200, 500000);
         }
 
         AsyncVirtualizingCollection<ClippingItem> clippingsList;

@@ -141,14 +141,13 @@ namespace KindleHighlightViewer.Code.DataVirtualization
             }
             set
             {
-                if ( value != _isLoading )
+                if (value != _isLoading)
                 {
                     _isLoading = value;
                 }
                 FirePropertyChanged("IsLoading");
             }
         }
-
         #endregion
 
         #region Load overrides
@@ -202,7 +201,7 @@ namespace KindleHighlightViewer.Code.DataVirtualization
         {
             int pageIndex = (int)args;
             IList<T> page = FetchPage(pageIndex);
-            SynchronizationContext.Send(LoadPageCompleted, new object[]{ pageIndex, page });
+            SynchronizationContext.Send(LoadPageCompleted, new object[] { pageIndex, page });
         }
 
         /// <summary>
@@ -211,7 +210,7 @@ namespace KindleHighlightViewer.Code.DataVirtualization
         /// <param name="args">object[] { int pageIndex, IList(T) page }</param>
         private void LoadPageCompleted(object args)
         {
-            int pageIndex = (int)((object[]) args)[0];
+            int pageIndex = (int)((object[])args)[0];
             IList<T> page = (IList<T>)((object[])args)[1];
 
             PopulatePage(pageIndex, page);
