@@ -8,11 +8,14 @@
 
     <Window.Resources>
         <lib:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" True="Visible" False="Hidden" />
+        <!---->
         <Style TargetType="{x:Type ScrollViewer}">
             <Style.Setters>
                 <Setter Property="lib:ScrollViewerCorrector.FixScrolling" Value="True" />
+                <Setter Property="Template" Value="{DynamicResource ScrollViewerControlTemplate}" />
             </Style.Setters>
         </Style>
+        <!---->
         <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
             <Setter Property="Template">
@@ -32,43 +35,45 @@
             </Setter>
         </Style>
     </Window.Resources>
+
     <Grid Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" 
-                      Template="{DynamicResource ScrollViewerControlTemplate}" 
-                      Grid.Row="0">
-            <ListBox ItemsSource="{Binding ClippingsList, IsAsync=True}"
+
+        <ListBox ItemsSource="{Binding ClippingsList, IsAsync=True}"
                      BorderBrush="Transparent"  
                      HorizontalContentAlignment="Stretch"
                      ItemContainerStyle="{StaticResource ListBoxItemStyle}"
-                     SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
-                <ListBox.CommandBindings>
-                    <CommandBinding Command="Copy" Executed="CommandBinding_Executed"/>
-                </ListBox.CommandBindings>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="Gainsboro" BorderThickness="2" CornerRadius="3" Background="Transparent" MaxWidth="600">
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="2">
-                                <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
-                                    <Border DockPanel.Dock="Left" Background="LightGray" BorderBrush="#FF3079ED" CornerRadius="8" BorderThickness="1">
-                                        <TextBlock Text="{Binding Title}" FontFamily="Verdana" Margin="5,2"/>
-                                    </Border>
-                                    <Border DockPanel.Dock="Right" Margin="0,2,0,0" Background="LightGray" BorderBrush="#FF3079ED" CornerRadius="8" BorderThickness="1">
-                                        <TextBlock Text="{Binding Author}" FontFamily="Verdana" Margin="5,2" />
-                                    </Border>
-                                </DockPanel>
-                                <Border HorizontalAlignment="Stretch" Margin="0,2,0,0" Background="WhiteSmoke" BorderBrush="LightGray" CornerRadius="8" BorderThickness="1">
-                                    <TextBlock Text="{Binding HighlightedText}" TextWrapping="WrapWithOverflow" FontFamily="Verdana" FontSize="12" Margin="5,2" />
+                     SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}"
+                     VirtualizingStackPanel.IsVirtualizing="True"
+                     VirtualizingStackPanel.VirtualizationMode="Recycling"
+                     ScrollViewer.IsDeferredScrollingEnabled="True">
+            <ListBox.CommandBindings>
+                <CommandBinding Command="Copy" Executed="CommandBinding_Executed"/>
+            </ListBox.CommandBindings>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gainsboro" BorderThickness="2" CornerRadius="3" Background="Transparent" MaxWidth="600">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="2">
+                            <DockPanel LastChildFill="False" HorizontalAlignment="Stretch">
+                                <Border DockPanel.Dock="Left" Background="LightGray" BorderBrush="#FF3079ED" CornerRadius="8" BorderThickness="1">
+                                    <TextBlock Text="{Binding Title}" FontFamily="Verdana" Margin="5,2"/>
                                 </Border>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </ScrollViewer>
+                                <Border DockPanel.Dock="Right" Margin="0,2,0,0" Background="LightGray" BorderBrush="#FF3079ED" CornerRadius="8" BorderThickness="1">
+                                    <TextBlock Text="{Binding Author}" FontFamily="Verdana" Margin="5,2" />
+                                </Border>
+                            </DockPanel>
+                            <Border HorizontalAlignment="Stretch" Margin="0,2,0,0" Background="WhiteSmoke" BorderBrush="LightGray" CornerRadius="8" BorderThickness="1">
+                                <TextBlock Text="{Binding HighlightedText}" TextWrapping="WrapWithOverflow" FontFamily="Verdana" FontSize="12" Margin="5,2" />
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
         <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel.Visibility>
                 <Binding Path="LoadingVisible" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" Converter="{StaticResource BooleanToVisibilityConverter}" />
@@ -78,10 +83,9 @@
                     <DropShadowEffect />
                 </TextBlock.Effect>
             </TextBlock>
-            <!--<ProgressBar Height="20" Width="400" HorizontalAlignment="Center" IsIndeterminate="True" Margin="10"/>-->
         </StackPanel>
         <StatusBar Grid.Row="1">
-            <TextBlock Text="Created by Bogdan Sachkovsky © ver. 1.1" FontSize="14" FontFamily="Verdana" Margin="5">
+            <TextBlock Text="Created by Bogdan Sachkovsky © ver. 1.2" FontSize="14" FontFamily="Verdana" Margin="5">
                 <TextBlock.Effect>
                     <DropShadowEffect />
                 </TextBlock.Effect>

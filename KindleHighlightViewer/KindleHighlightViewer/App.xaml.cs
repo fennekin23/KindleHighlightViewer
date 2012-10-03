@@ -7,6 +7,7 @@ using System.Windows;
 using KindlHighlightViewer.Code;
 using KindlHighlightViewer.ViewModels;
 using System.ComponentModel;
+using System.Threading;
 
 namespace KindlHighlightViewer
 {
@@ -30,7 +31,6 @@ namespace KindlHighlightViewer
             MainWindow window = new MainWindow();
             window.DataContext = mainViewModel;
             window.Show();
-            mainViewModel.LoadClippings();
         }
     }
 }
