@@ -29,7 +29,7 @@ namespace KindlHighlightViewer.ViewModels
         {
             var tempCollection = loader.Load();
             clippingItemProvider = new ClippingItemProvider(tempCollection, 500);
-            clippingsList = new AsyncVirtualizingCollection<ClippingItem>(clippingItemProvider, 200, 500000);
+            clippingsList = new AsyncVirtualizingCollection<ClippingItem>(clippingItemProvider, 100);
         }
 
         AsyncVirtualizingCollection<ClippingItem> clippingsList;
@@ -52,7 +52,7 @@ namespace KindlHighlightViewer.ViewModels
             set { this.selectedItem = value; OnPropertyChanged("SelectedItem"); }
         }
 
-        bool loadingVisible = true;
+        bool loadingVisible = false;
         /// <summary>
         /// Loading window visibility.
         /// </summary>
@@ -61,14 +61,6 @@ namespace KindlHighlightViewer.ViewModels
             get { return loadingVisible; }
             set { loadingVisible = value; OnPropertyChanged("LoadingVisible"); }
         }
-
-        ///// <summary>
-        ///// Loading clippings to ClippingsList.
-        ///// </summary>
-        //public void LoadClippings()
-        //{
-        //    LoadingVisible = false;
-        //}
 
         /* INotifyPropertyChanged members*/
         public event PropertyChangedEventHandler PropertyChanged;

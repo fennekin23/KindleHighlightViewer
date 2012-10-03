@@ -7,6 +7,7 @@ using System.Windows;
 using KindlHighlightViewer.Code;
 using KindlHighlightViewer.ViewModels;
 using System.ComponentModel;
+using System.Threading;
 
 namespace KindlHighlightViewer
 {
