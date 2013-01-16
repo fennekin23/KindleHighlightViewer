@@ -29,5 +29,10 @@ namespace KindlHighlightViewer
         {
             (this.DataContext as MainViewModel).CopyCommand(sender, e);
         }
+
+        private void OrderBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            (this.DataContext as MainViewModel).OrderCommand(c => c.Author);
+        }
     }
 }

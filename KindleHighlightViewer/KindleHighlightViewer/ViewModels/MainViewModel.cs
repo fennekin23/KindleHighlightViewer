@@ -12,6 +12,7 @@ using System.IO;
 using System.Windows.Controls;
 using System.Windows.Data;
 using KindleHighlightViewer.Code.DataVirtualization;
+using System.Collections;
 
 namespace KindlHighlightViewer.ViewModels
 {
@@ -24,22 +25,23 @@ namespace KindlHighlightViewer.ViewModels
 
         //IDataLoader dataLoader;
 
-        ClippingItemProvider clippingItemProvider;
         public MainViewModel(IDataLoader loader)
         {
             var tempCollection = loader.Load();
-            clippingItemProvider = new ClippingItemProvider(tempCollection, 500);
-            clippingsList = new AsyncVirtualizingCollection<ClippingItem>(clippingItemProvider, 100);
+            foreach (var item in tempCollection)
+            {
+                clippingsList.Add(item);
+            }
         }
 
-        AsyncVirtualizingCollection<ClippingItem> clippingsList;
+        List<ClippingItem> clippingsList = new List<ClippingItem>();
         /// <summary>
         /// View list of clippings.
         /// </summary>
-        public AsyncVirtualizingCollection<ClippingItem> ClippingsList
+        public List<ClippingItem> ClippingsList
         {
             get { return clippingsList; }
-            set { clippingsList = value; }
+            set { clippingsList = value; OnPropertyChanged("ClippingsList"); }
         }
 
         ClippingItem selectedItem = new ClippingItem();
@@ -82,6 +84,12 @@ namespace KindlHighlightViewer.ViewModels
                 string copyMessage = String.Format("{0} ({1}) \"{2}\"", SelectedItem.Title, SelectedItem.Author, SelectedItem.HighlightedText);
                 Clipboard.SetText(copyMessage);
             }
+        }
+
+        /* Order command */
+        public void OrderCommand(Func<ClippingItem, string> func)
+        {
+            ClippingsList = ClippingsList.OrderBy(func).ToList();
         }
     }
 }

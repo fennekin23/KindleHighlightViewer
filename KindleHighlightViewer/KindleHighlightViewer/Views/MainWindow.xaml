@@ -52,6 +52,7 @@
                      ScrollViewer.IsDeferredScrollingEnabled="True">
             <ListBox.CommandBindings>
                 <CommandBinding Command="Copy" Executed="CommandBinding_Executed"/>
+                <CommandBinding Command="Open" Executed="OrderBinding_Executed" />
             </ListBox.CommandBindings>
             <ListBox.ItemTemplate>
                 <DataTemplate>

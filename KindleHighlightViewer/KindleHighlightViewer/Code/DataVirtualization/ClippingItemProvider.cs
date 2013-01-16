@@ -26,6 +26,11 @@ namespace KindleHighlightViewer.Code.DataVirtualization
             sourceList = _sourceList;
         }
 
+        public void Order()
+        {
+            sourceList = sourceList.OrderBy(c => c.Author).ToList();
+        }
+
         /// <summary>
         /// Fetches the total number of items available.
         /// </summary>

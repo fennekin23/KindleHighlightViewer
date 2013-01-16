@@ -14,6 +14,8 @@ namespace KindleHighlightViewer.Code.DataVirtualization
         /// <returns></returns>
         int FetchCount();
 
+        void Order();
+
         /// <summary>
         /// Fetches a range of items.
         /// </summary>
