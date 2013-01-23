@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Controls;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     public class ScrollViewerCorrector
     {

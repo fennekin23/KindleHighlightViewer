@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     public interface IDataLoader
     {

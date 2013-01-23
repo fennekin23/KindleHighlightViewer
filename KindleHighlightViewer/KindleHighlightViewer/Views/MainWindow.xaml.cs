@@ -11,9 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using KindlHighlightViewer.ViewModels;
+using KindleHighlightViewer.ViewModels;
 
-namespace KindlHighlightViewer
+namespace KindleHighlightViewer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -30,9 +30,14 @@ namespace KindlHighlightViewer
             (this.DataContext as MainViewModel).CopyCommand(sender, e);
         }
 
-        private void OrderBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void ByAuthor(object sender, ExecutedRoutedEventArgs e)
         {
             (this.DataContext as MainViewModel).OrderCommand(c => c.Author);
+        }
+
+        private void ByTitle(object sender, ExecutedRoutedEventArgs e)
+        {
+            (this.DataContext as MainViewModel).OrderCommand(c => c.Title);
         }
     }
 }

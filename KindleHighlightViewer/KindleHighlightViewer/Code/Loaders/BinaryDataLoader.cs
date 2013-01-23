@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     /// <summary>
     /// Logic for loading data from binary file.

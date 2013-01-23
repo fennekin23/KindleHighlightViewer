@@ -6,7 +6,7 @@ using System.Windows.Data;
 using System.Globalization;
 using System.Windows;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     public class BooleanConverter<T> : IValueConverter
     {

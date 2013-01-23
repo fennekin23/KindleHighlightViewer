@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     /// <summary>
     /// Logic for loading data from xml file.

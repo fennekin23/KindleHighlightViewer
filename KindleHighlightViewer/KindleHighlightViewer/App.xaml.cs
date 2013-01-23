@@ -4,12 +4,12 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Windows;
-using KindlHighlightViewer.Code;
-using KindlHighlightViewer.ViewModels;
+using KindleHighlightViewer.Code;
+using KindleHighlightViewer.ViewModels;
 using System.ComponentModel;
 using System.Threading;
 
-namespace KindlHighlightViewer
+namespace KindleHighlightViewer
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     public class ShowBox
     {

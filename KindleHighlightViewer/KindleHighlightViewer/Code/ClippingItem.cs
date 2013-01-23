@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     /// <summary>
     /// Data structure for presentation clipping item.

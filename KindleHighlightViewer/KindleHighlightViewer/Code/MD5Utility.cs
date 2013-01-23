@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.IO;
 using Utility.ModifyRegistry;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     /// <summary>
     /// Logic for checking md5.

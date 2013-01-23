@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
-using KindlHighlightViewer.Code;
+using KindleHighlightViewer.Code;
 using System.Windows.Input;
 using System.Windows;
 using System.Xml.Serialization;
@@ -14,7 +14,7 @@ using System.Windows.Data;
 using KindleHighlightViewer.Code.DataVirtualization;
 using System.Collections;
 
-namespace KindlHighlightViewer.ViewModels
+namespace KindleHighlightViewer.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {

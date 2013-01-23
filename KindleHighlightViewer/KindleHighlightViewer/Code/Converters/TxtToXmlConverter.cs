@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace KindlHighlightViewer.Code
+namespace KindleHighlightViewer.Code
 {
     /// <summary>
     /// Convert "My Clippings.txt" to "My Clippings.txt.xml".
