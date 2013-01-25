@@ -11,12 +11,14 @@ namespace KindleHighlightViewer.Code
         /// <summary>
         /// Book title.
         /// </summary>
-        public string Title { get; set; }
+        string title = "Untitled";
+        public string Title { get { return String.IsNullOrEmpty(title) ? "Untitled" : title; } set { title = value; } }
 
         /// <summary>
         /// Book author.
         /// </summary>
-        public string Author { get; set; }
+        string author = "Undefined";
+        public string Author { get { return String.IsNullOrEmpty(author) ? "Undefined" : author; } set { author = value; } }
 
         /// <summary>
         /// Highlighted text.
