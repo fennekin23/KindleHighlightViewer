@@ -18,13 +18,6 @@ namespace KindleHighlightViewer.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        public MainViewModel()
-        {
-
-        }
-
-        //IDataLoader dataLoader;
-
         public MainViewModel(IDataLoader loader)
         {
             var tempCollection = loader.Load();
