@@ -20,11 +20,7 @@ namespace KindleHighlightViewer.ViewModels
     {
         public MainViewModel(IDataLoader loader)
         {
-            var tempCollection = loader.Load();
-            foreach (var item in tempCollection)
-            {
-                clippingsList.Add(item);
-            }
+            loader.Load().ToList().ForEach(item => clippingsList.Add(item));
         }
 
         List<ClippingItem> clippingsList = new List<ClippingItem>();
